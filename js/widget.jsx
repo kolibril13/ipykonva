@@ -5,10 +5,10 @@ import { Stage, Layer, Star, Text } from "react-konva";
 import "./widget.css";
 
 function generateShapes() {
-  return [...Array(30)].map((_, i) => ({
+  return [...Array(12)].map((_, i) => ({
     id: i.toString(),
     x: Math.random() * 500,
-    y: Math.random() * 400,
+    y: Math.random() * 200,
     rotation: Math.random() * 180,
     isDragging: false,
   }));
@@ -17,7 +17,7 @@ function generateShapes() {
 const INITIAL_STATE = generateShapes();
 
 export const render = createRender(() => {
-  const [value, setValue] = useModelState("value");
+  const [color, setColor] = useModelState("color");
   const [stars, setStars] = React.useState(INITIAL_STATE);
 
   const handleDragStart = (e) => {
@@ -43,7 +43,7 @@ export const render = createRender(() => {
   };
 
   return (
-    <Stage width={500} height={400}>
+    <Stage width={500} height={200}>
       <Layer>
         <Text text="Try to drag a star" />
         {stars.map((star) => (
@@ -55,7 +55,7 @@ export const render = createRender(() => {
             numPoints={5}
             innerRadius={20}
             outerRadius={40}
-            fill="#FFD700"
+            fill= {color}
             opacity={0.8}
             draggable
             rotation={star.rotation}
