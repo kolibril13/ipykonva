@@ -5,8 +5,10 @@
 	},
 	"dependencies": {
 		"@anywidget/react": "^0.0.2",
+		"konva": "^9.2.3",
 		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react-dom": "^18.2.0",
+		"react-konva": "^18.2.10"
 	},
 	"devDependencies": {
 		"esbuild": "^0.19.5"
